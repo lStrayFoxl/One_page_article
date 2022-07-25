@@ -65,3 +65,38 @@ body{
 .list_cont {
     margin-left: 30px;
 }
+
+ul:first-child {
+    margin-top: 33px;
+}
+
+.cont_title {
+    color: #2782E1;
+    font-size: 30px;
+    margin-left: 30px;
+    margin-bottom: 12px;
+}
+
+.title_text {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.parag_title {
+    font-size: 36px;
+    margin-top: 43px;
+}
+
+.parag {
+    font-size: 24px;
+    text-align: justify;
+    margin-top: 30px;
+}
+
+.created_date {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    text-align: right;
+    margin-top: 50px;
+}
