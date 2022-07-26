@@ -100,3 +100,41 @@ ul:first-child {
     text-align: right;
     margin-top: 50px;
 }
+
+.footer {
+    background-color: #2782E1;
+    margin-top: 95px;
+    height: 341px;
+}
+
+.create_author {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 99px;
+    margin-left: 45px;
+    position: absolute;
+    color: #FFFFFF;
+    line-height: 71px;
+}
+
+.contact_sect {
+    margin-top: 111px;
+    margin-left: 410px;
+    position: absolute;
+    color: #FFFFFF;
+}
+
+.contact_det {
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.contact {
+    margin-top: 20px;
+}
+
+.email {
+    font-weight: 500;
+    font-size: 32px;
+    margin-right: 80.36px;
+}
