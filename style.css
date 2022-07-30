@@ -17,7 +17,7 @@ body{
 }
 
 .header_article {
-    margin-top: 36px;
+    margin-top: 40px;
     margin-left: 45px;
     position: absolute;
 }
@@ -28,7 +28,7 @@ body{
 }
 
 .header_review {
-    margin-top: 44px;
+    margin-top: 60px;
     margin-left: 965px;
     color: #FFFFFF;
     font-size: 32px;
@@ -64,6 +64,7 @@ body{
 
 .list_cont {
     margin-left: 30px;
+    line-height: 20px;
 }
 
 ul:first-child {
@@ -118,7 +119,7 @@ ul:first-child {
 }
 
 .contact_sect {
-    margin-top: 111px;
+    margin-top: 126px;
     margin-left: 410px;
     position: absolute;
     color: #FFFFFF;
