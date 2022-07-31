@@ -36,8 +36,20 @@ body{
     position: absolute;
 }
 
+.view_review, .leave_review {
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+}
+
 .leave_review {
     margin-left: 43px;
+}
+
+.view_review:hover, .leave_review:hover{
+    text-decoration: underline;
 }
 
 .main {
@@ -75,13 +87,19 @@ ul:first-child {
     color: #2782E1;
     font-size: 30px;
     margin-left: 30px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .title_text {
+    border: none;
+    background: none;
     color: #000000;
     font-size: 24px;
     font-weight: bold;
+}
+
+.title_text:hover {
+    text-decoration: underline;
 }
 
 .parag_title {

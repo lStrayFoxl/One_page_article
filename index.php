@@ -1,7 +1,11 @@
 <?php 
     $dbh = new PDO('mysql:host=localhost;dbname=one_page_article', "root", "root");
 
-    $select = $dbh->query("SELECT * FROM `paragraph`");
+    $sql_all = "SELECT * FROM `paragraph`";
+    $sql_ptitle = 'SELECT `ptitle` FROM `paragraph`';
+
+    $select_all = $dbh->query($sql_all);
+    $select_ptitle = $dbh->query($sql_ptitle);
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +28,8 @@
                 </div>
 
                 <div class="header_review">
-                    <span class="view_review">View reviews</span>
-                    <span class="leave_review">Leave feedback</span>
+                    <button class="view_review">View reviews</button>
+                    <button class="leave_review">Leave feedback</button>
                 </div>
 
             </div>
@@ -41,16 +45,26 @@
 
             <div class="content_article">
                 <ul class="list_cont">
+                    <?php
+                    while($ruw = $select_ptitle->fetch(PDO::FETCH_ASSOC)){
+                        ?>
+
+                        <li class="cont_title"><button class="title_text"><?= $ruw['ptitle'] ?></button></li>
+
+                        <?php
+                    }
+                    ?>
+
+                    <!-- <li class="cont_title"><span class="title_text">Paragraph title</span></li>
                     <li class="cont_title"><span class="title_text">Paragraph title</span></li>
-                    <li class="cont_title"><span class="title_text">Paragraph title</span></li>
-                    <li class="cont_title"><span class="title_text">Paragraph title</span></li>
+                    <li class="cont_title"><span class="title_text">Paragraph title</span></li> -->
                 </ul>
             </div>
 
             <div class="text_content">
 
                 <?php
-                while($row = $select->fetch(PDO::FETCH_ASSOC)){
+                while($row = $select_all->fetch(PDO::FETCH_ASSOC)){
                     ?>
 
                     <div class="paragraphs">
