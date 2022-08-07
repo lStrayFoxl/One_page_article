@@ -3,9 +3,11 @@
 
     $sql_all = "SELECT * FROM `paragraph`";
     $sql_ptitle = 'SELECT `ptitle` FROM `paragraph`';
+    $sql_allCom = "SELECT * FROM `comments`";
 
     $select_all = $dbh->query($sql_all);
     $select_ptitle = $dbh->query($sql_ptitle);
+    $select_allCom = $dbh->query($sql_allCom);
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +30,78 @@
                 </div>
 
                 <div class="header_review">
-                    <button class="view_review">View reviews</button>
-                    <button class="leave_review">Leave feedback</button>
+                    <button class="view_review" id="viewBtn">View reviews</button>
+                    <button class="leave_review" id="leaveBtn">Leave feedback</button>
                 </div>
 
             </div>
         </div>
     </header>
+
+    <section class="modal_sect">
+        <div class="container">
+
+            <div class="modal" id="modalView">
+                <div class="modal_content">
+                    <span class="close_createCom close">&times;</span>
+                    <div class="input_info">
+                        <form action="assets/handler.php" method="get" class="form_comment">
+
+                            <legend class="title_create">Create review</legend>
+                            <label for="enterName" class="name">Name:</label><br>
+                            <input type="text" name="enterName" id="enterName" class="enter_name"><br><br>
+                            <label for="enterCom" class="text_com">Text review:</label><br>
+                            <textarea name="enterCom" id="enterCom" class="enter_com"></textarea><br><br>
+
+                            <div class="center_btn">
+                                <button type="submit" class="create_btn" name="createBtn">Create review</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="modalLeave">
+                <div class="modal_content">
+                    <span class="close_allCom close">&times;</span>
+                    <div class="comments_all">
+                        <div class="center_title">
+                            <span class="title_modal">All comments</span>
+                        </div>
+                        
+                        <?php
+                        while($comment = $select_allCom->fetch(PDO::FETCH_ASSOC)){
+                            ?>
+
+                            <div class="comment_block">
+                                <span class="name_commentator"><?= $comment['nameCom'] ?></span>
+                                <div class="text_comment">
+                                    <p class="text"><?= $comment['textCom'] ?></p>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                        ?>
+
+
+                        <!-- <div class="comment_block">
+                            <span class="name_commentator">Test_user</span>
+                            <div class="text_comment">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis porta odio, 
+                                    et bibendum libero. Nunc id neque convallis, pulvinar libero non, mollis enim. Aenean cursus 
+                                    lectus vel lectus convallis, non placerat arcu aliquam. Nunc nibh arcu, dictum ac.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+
+        </div>
+    </section>
 
     <main class="main">
         <div class="container">
