@@ -1,0 +1,182 @@
+/* Adapting styles to a 1280px screen */
+@media screen and (max-width: 1280px) {
+    .header_review {
+        margin-top: 44px;
+        margin-left: 750px;
+    }
+
+    .modal_content {
+        margin-left: 55px;
+        margin-right: 55px;
+        padding: 23px 50px;
+    }
+
+    .close {
+        margin-top: -10px;
+        margin-right: -27px;
+    }
+
+    .main {
+        margin-left: 125px;
+        margin-right: 125px;
+    }
+
+    .contact_sect {
+        margin-top: -43px;
+        margin-left: 43px;
+    }
+
+    .email {
+        margin-right: 26.36px;
+    }
+}
+
+/* Adapting styles to a 1024px screen */
+@media screen and (max-width: 1024px) {
+    .header_review {
+        margin-top: 44px;
+        margin-left: 495px;
+    }
+
+    .modal_content {
+        margin-left: 46px;
+        margin-right: 46px;
+        padding: 23px 50px;
+    }
+
+    .close {
+        margin-top: -10px;
+        margin-right: -27px;
+    }
+
+    .main {
+        margin-left: 46px;
+        margin-right: 46px;
+    }
+
+    .contact_sect {
+        margin-top: -43px;
+        margin-left: 43px;
+        padding-top: 84px;
+        padding-bottom: 62px;
+    }
+
+    .contact {
+        line-height: 64px;
+    }
+}
+
+/* Adapting styles to a 744px screen */
+@media screen and (max-width: 744px) {
+    .header_review {
+        margin-top: 26px;
+        margin-left: 490px;
+    }
+
+    .leave_review{
+        margin-top: 22px;
+        margin-left: 0px;
+    }
+
+    .modal_content {
+        margin-left: 27px;
+        margin-right: 27px;
+        padding: 23px 50px;
+    }
+
+    .close {
+        margin-top: -10px;
+        margin-right: -27px;
+    }
+
+    .main {
+        margin-left: 27px;
+        margin-right: 27px;
+    }
+
+    .contact_sect {
+        margin-top: -43px;
+        margin-left: 43px;
+        padding: 28px 0px 10px 425px;
+    }
+
+    .contact {
+        line-height: 56px;
+    }
+}
+
+/* Adapting styles to a 428px screen */
+@media screen and (max-width: 428px) {
+    .header_menu {
+        height: 241px;
+    }
+
+    .header_article {
+        background: #2782E1;
+        padding: 0px 20px 71px 30px;
+    }
+
+    .header_review {
+        margin-top: 180px;
+        margin-left: 18px;
+    }
+
+    .view_review, .leave_review {
+        font-size: 28px;
+    }
+
+    .leave_review{
+        margin-left: 0px;
+    }
+
+    .modal_content {
+        margin-top: 100px;
+        margin-left: 19px;
+        margin-right: 19px;
+        padding: 23px 50px;
+    }
+
+    .close {
+        margin-top: -10px;
+        margin-right: -27px;
+    }
+
+    .form_comment {
+        margin-left: -14px;
+        margin-right: -22px;
+    }
+
+    .enter_name, .enter_com {
+        width: 310px;
+    }
+
+    .comment_block {
+        margin-left: -31px;
+        margin-right: -31px;
+    }
+
+    .main {
+        margin-left: 19px;
+        margin-right: 19px;
+    }
+
+    .content_article {
+        width: 390px;
+    }
+
+    .footer {
+        height: 733px;
+    }
+
+    .contact_sect {
+        background: #2782E1;
+        margin-top: 374px;
+        margin-left: 0px;
+        padding-left: 116px;
+        padding-bottom: 26px;
+    }
+
+    .contact {
+        line-height: 56px;
+    }
+}

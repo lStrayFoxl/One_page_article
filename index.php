@@ -1,10 +1,13 @@
-<?php 
+<?php
+    // Database connection
     $dbh = new PDO('mysql:host=localhost;dbname=one_page_article', "root", "root");
 
+    // Sql queries
     $sql_all = "SELECT * FROM `paragraph`";
-    $sql_ptitle = 'SELECT `ptitle` FROM `paragraph`';
-    $sql_allCom = "SELECT * FROM `comments`";
+    $sql_ptitle = 'SELECT `id`, `ptitle` FROM `paragraph`';
+    $sql_allCom = "SELECT * FROM `comments` ORDER BY `id` DESC";
 
+    // Call request
     $select_all = $dbh->query($sql_all);
     $select_ptitle = $dbh->query($sql_ptitle);
     $select_allCom = $dbh->query($sql_allCom);
@@ -17,10 +20,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/adaptation.css">
     <title>onePageArticle</title>
 </head>
 <body>
     
+    <!-- Header section -->
     <header class="header">
         <div class="container">
             <div class="header_menu">
@@ -38,9 +43,11 @@
         </div>
     </header>
 
+    <!-- Modal section -->
     <section class="modal_sect">
         <div class="container">
 
+            <!-- Modal Input Window -->
             <div class="modal" id="modalView">
                 <div class="modal_content">
                     <span class="close_createCom close">&times;</span>
@@ -62,6 +69,7 @@
                 </div>
             </div>
 
+            <!-- Modal viewport -->
             <div class="modal" id="modalLeave">
                 <div class="modal_content">
                     <span class="close_allCom close">&times;</span>
@@ -85,24 +93,17 @@
                         }
                         ?>
 
-
-                        <!-- <div class="comment_block">
-                            <span class="name_commentator">Test_user</span>
-                            <div class="text_comment">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis porta odio, 
-                                    et bibendum libero. Nunc id neque convallis, pulvinar libero non, mollis enim. Aenean cursus 
-                                    lectus vel lectus convallis, non placerat arcu aliquam. Nunc nibh arcu, dictum ac.</p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
 
+            <!-- Connecting to js -->
             <script src="script.js"></script>
 
         </div>
     </section>
 
+    <!-- Content section -->
     <main class="main">
         <div class="container">
 
@@ -112,29 +113,29 @@
 
             <div class="content_article">
                 <ul class="list_cont">
+                    
+                    <!-- Retrieving content from the database using a loop -->
                     <?php
                     while($ruw = $select_ptitle->fetch(PDO::FETCH_ASSOC)){
                         ?>
 
-                        <li class="cont_title"><button class="title_text"><?= $ruw['ptitle'] ?></button></li>
+                        <li class="cont_title"><a href="#<?= $ruw['id'] ?>" class="title_text"><?= $ruw['ptitle'] ?></a></li>
 
                         <?php
                     }
                     ?>
 
-                    <!-- <li class="cont_title"><span class="title_text">Paragraph title</span></li>
-                    <li class="cont_title"><span class="title_text">Paragraph title</span></li>
-                    <li class="cont_title"><span class="title_text">Paragraph title</span></li> -->
                 </ul>
             </div>
 
             <div class="text_content">
 
+                <!-- Extracting text from the database using a loop -->
                 <?php
                 while($row = $select_all->fetch(PDO::FETCH_ASSOC)){
                     ?>
 
-                    <div class="paragraphs">
+                    <div class="paragraphs" id="<?= $row['id'] ?>">
                         <h3 class="parag_title"><?= $row['ptitle'] ?></h3>
                         <p class="parag"><?= $row['ptext'] ?></p>
                     </div>
@@ -151,6 +152,7 @@
         </div>   
     </main>
 
+    <!-- Footer section -->
     <footer class="footer">
         <div class="container">
 
