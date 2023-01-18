@@ -21,13 +21,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/adaptation.css">
+    <link rel="icon" href="img/L_icon.png" type="image/x-icon">
     <title>onePageArticle</title>
 </head>
 <body>
+
+    <!-- Preloader section -->
+    <div class="preloader" id="page-preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- Connecting to js -->
+    <script src="js/preloader.js"></script>
     
     <!-- Header section -->
     <header class="header">
-        <div class="container">
+        <div class="">
             <div class="header_menu">
 
                 <div class="header_article">
@@ -71,7 +79,7 @@
 
             <!-- Modal viewport -->
             <div class="modal" id="modalLeave">
-                <div class="modal_content">
+                <div class="modal_content scroll">
                     <span class="close_allCom close">&times;</span>
                     <div class="comments_all">
                         <div class="center_title">
@@ -154,7 +162,7 @@
 
     <!-- Footer section -->
     <footer class="footer">
-        <div class="container">
+        <div class="">
 
             <div class="create_author">
                 <span class="author">Created by:<br>StrayFox</span>

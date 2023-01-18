@@ -15,7 +15,7 @@ btnView.onclick = function() {
     modalView.style.display = "block";
 }
 
-// Function for displaying a modal window for viewing comments
+// The function of closing modal windows on a cross
 closeBtn_create.onclick = function() {
     modalView.style.display = "none";
 }
